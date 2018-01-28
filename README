@@ -3,17 +3,14 @@ How does the temperature change as a function of time and distance from the cent
 And how does the temperature differ for different shapes that occupy various volumes as they heat? 
 Or why, on a cold day, is getting out of the shower and standing on the carpet warmer than stepping onto the tile when both the tile and carpet hold the same temperature? 
 
-The answers lie in the everyday phenomena known as Thermodynamics, the basic principles of science that dictate how energy is 
-transferred from one object to another. There are 3 modes of heat transfer: conduction, convection, and radiation, and all 3 
-describe how we and the molecules all around us interact with each other. These 3 methods are not always independent and 
-sometimes, all 3 methods of heat transfer are present! 
+The answers lie in the everyday phenomena known as Thermodynamics, the basic principles of science that dictate how energy is transferred from one object to another. There are 3 modes of heat transfer: conduction, convection, and radiation, and all 3 describe how we and the molecules all around us interact with each other. These 3 methods are not always independent and sometimes, all 3 methods of heat transfer are present! 
 
 The governing differential equation of Unsteady State Heat Transfer describes how temperature changes with location & time through a surface. 
 
   dT/dt = alpha*(d/dr)*(r(n)*(dT/dr))
   
   where
-  alpha: thermal coefficient 
+  alpha: thermal coefficient
   n = 1: cylinder (tenderloin)
   V = pi*r^2*h
   V = m/density
@@ -26,10 +23,11 @@ The governing differential equation of Unsteady State Heat Transfer describes ho
   t: time
   r: radius 
   
-  Since the Volume of both a sphere and a cylinder can be expressed in terms of radius and weight, we can solve for the temperature
-  as a function of distance from the center and with respect to time. 
+  Since the Volume of both a sphere and a cylinder can be expressed in terms of radius and weight, we can solve for the temperature as a function of distance from the center and with respect to time. 
   
-  Using the pdepe function to solve this differential equation, we concluded through statistical analysis that weight and cooking
+  In doing the complex calculations, each program uses several other sub-functions to give the final results. The mass to radius function calculates the radius of a piece of meat given the density, the geometry, and the mass of the meat. The pdex1bc function defines the boundary conditions. The pdex1ic function defines the initial condition T0. The pdex1pde function calculates the second order differential equation for the temperature across the vector space based on the two variables, time and radius. Finally, the programs use the index locator function to locate the desired final temperatures (85 °C for turkey, 60 °C for tenderloin) in the temperature vector. Then the corresponding times are located in the time vector.  
+  
+  We concluded through statistical analysis that weight and cooking
   time do not have a linear relationship as claimed by the packaging for both meats. Our model also shows that the cook time for the
   tenderloin is actually more and that the turkey is less than instructed on the packaging labels. 
   
