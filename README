@@ -1,40 +1,13 @@
-Have you ever wondered about the relationship between cooking time and weight of certain foods? 
-How does the temperature change as a function of time and distance from the center? 
-And how does the temperature differ for different shapes that occupy various volumes as they heat? 
-Or why, on a cold day, is getting out of the shower and standing on the carpet warmer than stepping onto the tile when both the tile and carpet hold the same temperature? 
+I got my bachelors degree in Chemical Engineering and worked with one of my besties, Morgan McClure, from college who majored in Mechanical Engineering (currently getting her law degree to achieve her dream of being a Patent Lawyer). While our curriculum in college took us down different pathways, we both took the same fundamental courses and shared the pain of having to learn Matlab on the fly and apply to our freshmen engineering course (while having no idea what we were doing). Forewarning, this project curriculum was something created by a previous professor. Sometimes to truly better learn and understand a theory - you have to go backwards in order to go forward ;) It was a great learning experience to go back and experience with a close friend <3
 
-The answers lie in the everyday phenomena known as Thermodynamics, the basic principles of science that dictate how energy is transferred from one object to another. There are 3 modes of heat transfer: conduction, convection, and radiation, and all 3 describe how we and the molecules all around us interact with each other. These 3 methods are not always independent and sometimes, all 3 methods of heat transfer are present! 
+Have you ever wondered about the relationship between cooking time and weight of certain foods? How does the temperature change as a function of time and distance from the center? And how does the temperature differ for different shapes that occupy various volumes as they heat? Or why, on a cold day, is getting out of the shower and standing on the carpet warmer than stepping onto the tile when both the tile and carpet hold the same temperature?
 
-The governing differential equation of Unsteady State Heat Transfer describes how temperature changes with location & time through a surface. 
+The answers lie in the everyday phenomena known as Thermodynamics, the basic principles of science that dictate how energy is transferred from one object to another. There are 3 modes of heat transfer: conduction, convection, and radiation, and all 3 describe how we and the molecules all around us interact with each other. These 3 methods are not always independent and sometimes, all 3 methods of heat transfer are present!
 
-  dT/dt = alpha*(d/dr)*(r(n)*(dT/dr))
-  
-  where
-  alpha: thermal coefficient
-  n = 1: cylinder (tenderloin)
-  V = pi*r^2*h
-  V = m/density
-  
-  n = 2: sphere (turkey) 
-  V = 4/3 * pi * r^3 
-  V = m/density
-  
-  T: temperature
-  t: time
-  r: radius 
-  
-  Since the Volume of both a sphere and a cylinder can be expressed in terms of radius and weight, we can solve for the temperature as a function of distance from the center and with respect to time. 
-  
-  In doing the complex calculations, each program uses several other sub-functions to give the final results. The mass to radius function calculates the radius of a piece of meat given the density, the geometry, and the mass of the meat. The pdex1bc function defines the boundary conditions. The pdex1ic function defines the initial condition T0. The pdex1pde function calculates the second order differential equation for the temperature across the vector space based on the two variables, time and radius. Finally, the programs use the index locator function to locate the desired final temperatures (85 °C for turkey, 60 °C for tenderloin) in the temperature vector. Then the corresponding times are located in the time vector.  
-  
-  We concluded through statistical analysis that weight and cooking time do not have a linear relationship as claimed by the packaging for both meats. Our model also shows that the cook time for the tenderloin is actually more and that the turkey is less than instructed on the packaging labels. 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+Let's pretend you are hosting Thanksgiving and the main entrees that you are serving include a turkey and a tenderloin for your guests. The packaging has a required cooking time and oven temperature for each but you are skeptical because you remember that your grandma would always guesstimate and check using an oven thermometer. Thanksgiving dinner was never served on time at grandmas! Things never cooked quite as the packaging claimed they would. In addition, you know that the shape of the turkey and the tenderloin are both different and you begin to wonder how heat transfer is distributed across both shapes. With our program, we can quickly predict the most accurate cooking time for your meat, eliminating the need to pull out the meat thermometer and check every five minutes for an hour to see when your meat is finally ready. You can visualize on our 3d graph the time you'll need for the center of your turkey or tenderloin to reach the desired temperature. We used the packaging on a turkey and tenderloin and proved that the cook times listed were wrong. These results are plotted in our application in a 2d graph.
+
+If you're single, or don't have a large family to cook for, you've probably run into the problem of having too much food. Often, seasonal meats like ham are only sold in one quantity...something like half a ham or a full ham. If you cook all of that at once, you'll be eating non-stop ham for weeks, and much of it will undoubtedly go to waste when you get sick of it after a day or two. Not with our program! Now, you can enter in the mass you want to cook and use the tenderloin model to instantly find the correct cook time for your single serving, while you freeze the rest. This will save on food waste for the entire community.
+
+Implementing the governing equation of unsteady heat transfer using the pdepe functions for differential equations in MATLAB, we simulated a 3D surface map to visualize the temperature as a function of time and distance from the center of both shapes in addition to performing a statistical analysis on how accurate the linear relationship predicted by weight vs. cooking time on the packaging is.
+
+MATLAB is a software that is used in many applications to help engineers make sense out of and better understand the underlying principles of fluid dynamics, thermodynamics, chemical reactions, process control etc. Our model helps visualize a fundamental of Thermodynamics that is essential to become a better cook, HVAC designer, scientist, engineer, and more efficient problem solver in the world!
